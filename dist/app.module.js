@@ -13,6 +13,7 @@ const posts_module_1 = require("./modules/posts.module");
 const demo_middleware_1 = require("./core/middlewares/demo.middleware");
 const core_1 = require("@nestjs/core");
 const demo_roles_guard_1 = require("./core/guards/demo-roles.guard");
+const logging_interceptor_1 = require("./core/interceptors/logging.interceptor");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer
@@ -28,6 +29,10 @@ AppModule = __decorate([
             {
                 provide: core_1.APP_GUARD,
                 useClass: demo_roles_guard_1.DemoRolesGuard
+            },
+            {
+                provide: core_1.APP_INTERCEPTOR,
+                useClass: logging_interceptor_1.LoggingInterceptor
             }
         ],
     })

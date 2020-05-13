@@ -18,12 +18,16 @@ const demo_service_1 = require("./providers/demo/demo.service");
 const demo_filter_1 = require("../core/filters/demo.filter");
 const demo_auth_guard_1 = require("../core/guards/demo-auth.guard");
 const roles_decorator_1 = require("../core/decorator/roles.decorator");
+const logging_interceptor_1 = require("../core/interceptors/logging.interceptor");
+const transform_interceptor_1 = require("../core/interceptors/transform.interceptor");
+const errors_interceptor_1 = require("../core/interceptors/errors.interceptor");
+const user_decorator_1 = require("../core/decorator/user.decorator");
+const demo_pipe_1 = require("../core/pipes/demo.pipe");
 let PostsController = class PostsController {
     constructor(demoService) {
         this.demoService = demoService;
     }
     index() {
-        return this.demoService.findAll();
     }
     show(id) {
         console.log('id:', typeof id);
@@ -31,7 +35,7 @@ let PostsController = class PostsController {
             title: `Post ${id}`
         };
     }
-    store(post) {
+    store(post, user) {
         this.demoService.create(post);
     }
 };
@@ -52,9 +56,9 @@ __decorate([
     common_1.Post(),
     common_1.UsePipes(common_1.ValidationPipe),
     roles_decorator_1.Roles('member'),
-    __param(0, common_1.Body()),
+    __param(0, common_1.Body()), __param(1, user_decorator_1.User(demo_pipe_1.DemoPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [post_dto_1.CreatePostDto]),
+    __metadata("design:paramtypes", [post_dto_1.CreatePostDto, Object]),
     __metadata("design:returntype", void 0)
 ], PostsController.prototype, "store", null);
 PostsController = __decorate([
