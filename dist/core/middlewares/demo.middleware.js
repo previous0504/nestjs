@@ -9,7 +9,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 let DemoMiddleware = class DemoMiddleware {
     use(req, res, next) {
-        console.log('hello~ middleware');
+        req.user = {
+            roles: ['guest']
+        };
+        if (req.header('x-demo') === 'secret') {
+            req.user = {
+                roles: ['member']
+            };
+        }
         next();
     }
 };

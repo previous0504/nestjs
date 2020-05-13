@@ -9,12 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const class_validator_1 = require("class-validator");
-class CreatePostDto {
-}
-__decorate([
-    class_validator_1.IsString(),
-    __metadata("design:type", String)
-], CreatePostDto.prototype, "title", void 0);
-exports.CreatePostDto = CreatePostDto;
-//# sourceMappingURL=post.dto.js.map
+const common_1 = require("@nestjs/common");
+const core_1 = require("@nestjs/core");
+let DemoRolesGuard = class DemoRolesGuard {
+    constructor(reflector) {
+        this.reflector = reflector;
+    }
+    canActivate(context) {
+        const roles = this.reflector.get('roles', context.getHandler());
+        if (!roles) {
+            return true;
+        }
+        const request = context.switchToHttp().getRequest();
+        const { user } = request;
+        const hasRole = () => user.roles.some(role => roles.includes(role));
+        return user && user.roles && hasRole();
+    }
+};
+DemoRolesGuard = __decorate([
+    common_1.Injectable(),
+    __metadata("design:paramtypes", [core_1.Reflector])
+], DemoRolesGuard);
+exports.DemoRolesGuard = DemoRolesGuard;
+//# sourceMappingURL=demo-roles.guard.js.map

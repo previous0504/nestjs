@@ -4,7 +4,7 @@ export declare class PostsController {
     private readonly demoService;
     constructor(demoService: DemoService);
     index(): import("./interfaces/post.interface").Post[];
-    show(params: any): {
+    show(id: any): {
         title: string;
     };
     store(post: CreatePostDto): void;

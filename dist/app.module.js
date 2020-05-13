@@ -11,6 +11,8 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const posts_module_1 = require("./modules/posts.module");
 const demo_middleware_1 = require("./core/middlewares/demo.middleware");
+const core_1 = require("@nestjs/core");
+const demo_roles_guard_1 = require("./core/guards/demo-roles.guard");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer
@@ -22,7 +24,12 @@ AppModule = __decorate([
     common_1.Module({
         imports: [posts_module_1.PostsModule],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [app_service_1.AppService,
+            {
+                provide: core_1.APP_GUARD,
+                useClass: demo_roles_guard_1.DemoRolesGuard
+            }
+        ],
     })
 ], AppModule);
 exports.AppModule = AppModule;

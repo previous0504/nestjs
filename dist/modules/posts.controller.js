@@ -16,6 +16,8 @@ const common_1 = require("@nestjs/common");
 const post_dto_1 = require("./post.dto");
 const demo_service_1 = require("./providers/demo/demo.service");
 const demo_filter_1 = require("../core/filters/demo.filter");
+const demo_auth_guard_1 = require("../core/guards/demo-auth.guard");
+const roles_decorator_1 = require("../core/decorator/roles.decorator");
 let PostsController = class PostsController {
     constructor(demoService) {
         this.demoService = demoService;
@@ -23,13 +25,14 @@ let PostsController = class PostsController {
     index() {
         return this.demoService.findAll();
     }
-    show(params) {
+    show(id) {
+        console.log('id:', typeof id);
         return {
-            title: `Post ${params.id}`
+            title: `Post ${id}`
         };
     }
     store(post) {
-        throw new common_1.HttpException('没有权限', common_1.HttpStatus.FORBIDDEN);
+        this.demoService.create(post);
     }
 };
 __decorate([
@@ -40,13 +43,15 @@ __decorate([
 ], PostsController.prototype, "index", null);
 __decorate([
     common_1.Get(':id'),
-    __param(0, common_1.Param()),
+    __param(0, common_1.Param('id', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], PostsController.prototype, "show", null);
 __decorate([
     common_1.Post(),
+    common_1.UsePipes(common_1.ValidationPipe),
+    roles_decorator_1.Roles('member'),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [post_dto_1.CreatePostDto]),
