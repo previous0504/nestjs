@@ -7,23 +7,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
-const posts_module_1 = require("./modules/posts.module");
-const demo_middleware_1 = require("./core/middlewares/demo.middleware");
-let AppModule = class AppModule {
-    configure(consumer) {
-        consumer
-            .apply(demo_middleware_1.DemoMiddleware)
-            .forRoutes('posts');
-    }
+const posts_controller_1 = require("./posts.controller");
+const demo_service_1 = require("./providers/demo/demo.service");
+let PostsModule = class PostsModule {
 };
-AppModule = __decorate([
+PostsModule = __decorate([
     common_1.Module({
-        imports: [posts_module_1.PostsModule],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        controllers: [posts_controller_1.PostsController],
+        providers: [demo_service_1.DemoService]
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], PostsModule);
+exports.PostsModule = PostsModule;
+//# sourceMappingURL=posts.module.js.map

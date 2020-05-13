@@ -909,9 +909,37 @@
         "version": "260f889b9e2b69f77be1155348eb345166aec664b3efff6720053c6844a41f28",
         "signature": "3293b0d1d6a7f902316e164fcf36ae099f1bbb0224484586eaab30d9dea78d32"
       },
+      "../src/modules/post.dto.ts": {
+        "version": "0dc283c096dd97738beffd558bfd84d308d283c60115b58d64d1b3e04895aa5f",
+        "signature": "80f48bf6250704f6c64442cb1a88fac6f603263f8f43e789004a0f636390c872"
+      },
+      "../src/modules/interfaces/post.interface.ts": {
+        "version": "704717175edd77a667458a4f6a733500c96e1ab0992c86315fbc09a224bc140b",
+        "signature": "bdad87be68c6dc380d5cd503ad3bf8dbe9b20e50d31d6219a5af963f083d28f0"
+      },
+      "../src/modules/providers/demo/demo.service.ts": {
+        "version": "85de5a555a848a61ba2dd517083af488a215ce556b65db955c65d08c5201ab6b",
+        "signature": "4c75d6aea7b7c83f3ecee836962cfb44e3afe1b3ff4382d3e37e03287936ea33"
+      },
+      "../src/core/filters/demo.filter.ts": {
+        "version": "1d27416763a2b51a106fe9edec3a3fe7fd73868c502597f6e4eab14dc53a7507",
+        "signature": "288a9d014483bebe77d8cdbf08236a442fd4cc93bdad117cf67079b90e3f2576"
+      },
+      "../src/modules/posts.controller.ts": {
+        "version": "d5bf585c254d86ac49564f20869e569c3359ea0b00562422ec89eee67c5d525a",
+        "signature": "2f19fc6bf2076e77366c800f8e4c809ad58827ca97f37f706ebd4b92722360c9"
+      },
+      "../src/modules/posts.module.ts": {
+        "version": "1d48e6aa23ecaead2813c1bdc3c03ebf6a3cf917d00345423af91a5801bd57c9",
+        "signature": "40121fef5aabd3c0b01245db985540faea0c6f8097c5efd734df5fa6031b0f6c"
+      },
+      "../src/core/middlewares/demo.middleware.ts": {
+        "version": "1250d8c5ba0ce2193ba3e6253d1ceeb47f3e2665b776e664ddd3ef0c191f062b",
+        "signature": "46aa2f66c3e6bbee1d7587aa4e5891dbb3ef03eaf9f59ff15332e0ea8252e4d0"
+      },
       "../src/app.module.ts": {
-        "version": "319f8e45e370ba3d33f0887e3046096714959d3764fc68b444885cfdb9c101dd",
-        "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88"
+        "version": "7a975f14e7dccf856cbcc9b2aecd42cf1a5d0cd775cbc34b019d4128d2d04f5f",
+        "signature": "843f051400e86a3e4de923e5b7271bfa660bd889abf5fee0dce89d6ded83b42c"
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
         "version": "71cc7da1ef9d96f44a214a43017535538b47988d4bc9dedbf7592d2f9fe10da9",
@@ -1058,7 +1086,7 @@
         "signature": "7b5ed961a0e03965299591d73de8b8c41e8a68105ff4fc07a240b0dfb94a5a3d"
       },
       "../src/main.ts": {
-        "version": "e25d9bd8f80b6ffbcc8826ed1b407e747e4fbe346c5bab62cbe5837da4eeb189",
+        "version": "7a147346f106351d5b121bb89449a9227458476d40984b2ef45176d37de1027d",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -3494,10 +3522,72 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/modules/post.dto.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/modules/interfaces/post.interface.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/modules/providers/demo/demo.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/modules/interfaces/post.interface.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/core/filters/demo.filter.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/modules/posts.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/modules/post.dto.ts",
+        "../src/modules/providers/demo/demo.service.ts",
+        "../src/core/filters/demo.filter.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/modules/posts.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/modules/posts.controller.ts",
+        "../src/modules/providers/demo/demo.service.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/core/middlewares/demo.middleware.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
+        "../src/modules/posts.module.ts",
+        "../src/core/middlewares/demo.middleware.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -3859,6 +3949,7 @@
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
         "../src/app.module.ts",
+        "../src/core/filters/demo.filter.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -6715,6 +6806,23 @@
       "../src/app.controller.ts": [
         "../src/app.service.ts"
       ],
+      "../src/modules/providers/demo/demo.service.ts": [
+        "../src/modules/interfaces/post.interface.ts"
+      ],
+      "../src/core/filters/demo.filter.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/modules/posts.controller.ts": [
+        "../src/modules/interfaces/post.interface.ts",
+        "../src/modules/providers/demo/demo.service.ts",
+        "../src/modules/post.dto.ts"
+      ],
+      "../src/core/middlewares/demo.middleware.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/app.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/common/interfaces/index.d.ts",
@@ -8126,7 +8234,14 @@
       "../node_modules/@nestjs/common/utils/forward-ref.util.d.ts",
       "../node_modules/@nestjs/common/utils/index.d.ts",
       "../node_modules/@nestjs/common/index.d.ts",
+      "../src/app.service.ts",
       "../src/app.controller.ts",
+      "../src/modules/post.dto.ts",
+      "../src/modules/interfaces/post.interface.ts",
+      "../src/modules/providers/demo/demo.service.ts",
+      "../src/core/filters/demo.filter.ts",
+      "../src/modules/posts.module.ts",
+      "../src/core/middlewares/demo.middleware.ts",
       "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
@@ -8262,7 +8377,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/app.service.ts"
+      "../src/modules/posts.controller.ts"
     ]
   },
   "version": "3.8.3"
